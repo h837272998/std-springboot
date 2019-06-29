@@ -1,0 +1,19 @@
+spring:
+  thymeleaf:
+    model: HTML5
+    encoding: UTF-8
+    cache: false  #开发模式关闭缓存
+    servlet:
+      content-type: text/html
+  datasource:
+    url: jdbc:mysql://47.106.130.59:3306/springboot?charaterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8081
+  servlet:
+    context-path:

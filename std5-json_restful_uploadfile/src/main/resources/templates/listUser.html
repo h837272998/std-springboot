@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/vue.js}"></script>
+    <script type="text/javascript" th:src="@{js/axios.min.js}"></script>
+    <style type="text/css">
+        td{
+            border:1px solid gray;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        div#app{
+            margin:20px auto;
+            width:600px;
+            padding:20px;
+
+        }
+
+        div#pagination{
+            text-align: center;
+            line-height: 100px;
+        }
+        div#pagination a{
+            text-decoration:none;
+        }
+
+        .disableHref{
+            cursor:default;
+            color:#E5E0E0;
+            text-decoration:none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("a.disableHref").click(function(event){
+                return false;
+//                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<div id="app">
+    <table>
+        <tr>
+            <td colspan="3">
+                <div id="pagination" >
+                    <a :class="{ disableHref: pagination.pageNum==1 }" href="#nowhere" @click="jump('first')">[first]</a>
+                    <a :class="{ disableHref: !pagination.hasPreviousPage }" href="#nowhere" @click="jump('pre')">[pre]</a>
+
+                    <a href="#nowhere" :class="{disableHref:pagination.pageNum==i}"  v-for="i in pagination.navigatepageNums" @click="jumpByNumber(i)" >
+                        {{i}}
+                    </a>
+
+                    <a :class="{ disableHref: !pagination.hasNextPage }" href="#nowhere" @click="jump('next')">[next]</a>
+                    <a :class="{ disableHref: pagination.pageNum==pagination.pages }" href="#nowhere" @click="jump('last')">[last]</a>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>id</td>
+            <td>姓名</td>
+            <td>头像</td>
+            <td>操作</td>
+        </tr>
+
+        <tr v-for="user in users ">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td><img v-bind:src="'upload/'+user.id + '.png'" /></td>
+            <td>
+                <a :href="'editUser?id=' + user.id ">编辑</a>
+                <a href="#nowhere" @click="deleteUser(user.id)">删除</a>
+                <a href="#nowhere">
+                    <input type="file" id="file" name="file" accept="image/*" @change="upload(user.id,$event)">
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <br>
+                姓名:
+                <input type="text"    v-model="user4Add.name" />
+                <br>
+                <br>
+                <button type="button"  v-on:click="add">增加</button>
+                <br>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<script type="text/javascript">
+    var data4Vue = {
+        users: [],
+        user4Add: { id: 0, name: '',},
+        pagination:{}
+    };
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data4Vue,
+        mounted:function(){ //mounted　表示这个 Vue 对象加载成功了
+            this.list(1);
+        },
+        methods: {
+            list:function(start){
+                var url = "users?start="+start;
+                axios.get(url).then(function(response) {
+                    vue.pagination = response.data;
+                    console.log(vue.pagination);
+                    vue.users = response.data.list;
+                })
+            },
+            add: function (event) {
+                var url = "users";
+
+                axios.post(url,this.user4Add).then(function(response){
+                    vue.list(1);
+                    vue.user4Add = { id: 0, name: ''}
+                });
+            },
+            deleteUser: function (id) {
+                var url = "users/"+id;
+                axios.delete(url).then(function(response){
+                    vue.list(1);
+                });
+            },
+            upload: function(id,event){
+                var url = "upload";
+                let formData = new FormData();
+                formData.append("id",id)
+                formData.append("file", event.target.files[0]);
+                axios.post(url,formData,{headers: {'Content-Type' : 'multipart/form-data'}}).then(function (response) {
+                    vue.list(1);
+                });
+            },
+            jump: function(page){
+                if('first'== page && 1!=vue.pagination.pageNum)
+                    vue.list(1);
+
+                else if('pre'== page && vue.pagination.hasPreviousPage )
+                    vue.list(vue.pagination.prePage);
+
+                else if('next'== page && vue.pagination.hasNextPage)
+                    vue.list(vue.pagination.nextPage);
+
+                else if('last'== page && vue.pagination.pageNum!=vue.pagination.pages)
+                    vue.list(vue.pagination.pages);
+
+            },
+            jumpByNumber: function(start){
+                if(start!=vue.pagination.pageNum)
+                    vue.list(start);
+            },
+        }
+    });
+</script>
+</body>
+</html>

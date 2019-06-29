@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/std-springboot.iml" filepath="$PROJECT_DIR$/std-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/std1-hello/std1-hello.iml" filepath="$PROJECT_DIR$/std1-hello/std1-hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/std2-exception_and_yml/std2-exception_and_yml.iml" filepath="$PROJECT_DIR$/std2-exception_and_yml/std2-exception_and_yml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/std3-jpa/std3-jpa.iml" filepath="$PROJECT_DIR$/std3-jpa/std3-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/std4-mybatis/std4-mybatis.iml" filepath="$PROJECT_DIR$/std4-mybatis/std4-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/std5-json_restful_uploadfile/std5-json_restful_uploadfile.iml" filepath="$PROJECT_DIR$/std5-json_restful_uploadfile/std5-json_restful_uploadfile.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="std-springboot" />
+        <module name="std1-hello" />
+        <module name="std2-exception_and_yml" />
+        <module name="std3-jpa" />
+        <module name="std4-mybatis" />
+        <module name="std5-json_restful_uploadfile" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="std-springboot" target="1.8" />
+      <module name="std1-hello" target="1.8" />
+      <module name="std1jsphello" target="1.8" />
+      <module name="std2-exception_and_yml" target="1.8" />
+      <module name="std3-jpa" target="1.8" />
+      <module name="std4-mybatis" target="1.8" />
+      <module name="std5-json_restful_uploadfile" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

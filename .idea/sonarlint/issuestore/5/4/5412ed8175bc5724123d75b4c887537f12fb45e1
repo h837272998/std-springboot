@@ -1,0 +1,25 @@
+
+csquid:S00112;"FDefine and throw a dedicated exception instead of using a generic one.(ïıášşÿÿÿÿ
+csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¿óèÁúÿÿÿÿ
+Fsquid:S1148["#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Û‘ê’º-
+O
+squid:S106,"9Replace this use of System.out or System.err by a logger.(Ø¼¢ƒ
+_squid:S11923"HDefine a constant instead of duplicating this literal "success" 4 times.(ùØ
+¢%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¿óèÁúÿÿÿÿ
+dsquid:S4488A"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(šèûÿÿÿÿ
+_squid:S4488G"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ù¼Ôš
+nsquid:CommentedOutCodeLineP"<This block of commented-out lines of code should be removed.(š²óœıÿÿÿÿ8Ô¯ú˜º-
+^squid:S001126"FDefine and throw a dedicated exception instead of using a generic one.(á¢œé
+œ%squid:RedundantThrowsDeclarationCheck)"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(½®°+
+O
+squid:S106*"9Replace this use of System.out or System.err by a logger.(ö¡¹ê
+]squid:S00112)"FDefine and throw a dedicated exception instead of using a generic one.(½®°+
+Fsquid:S1148X"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8İóé’º-
+%squid:RedundantThrowsDeclarationCheck6"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(á¢œé
+jsquid:S00112N"FDefine and throw a dedicated exception instead of using a generic one.(»¿ä”ÿÿÿÿÿ8ïª’º-
+¢%squid:RedundantThrowsDeclarationCheck1"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(×‘¥¼ùÿÿÿÿ
+T
+squid:S106""9Replace this use of System.out or System.err by a logger.(¿ƒÚııÿÿÿÿ
+csquid:S001121"FDefine and throw a dedicated exception instead of using a generic one.(×‘¥¼ùÿÿÿÿ
+¢%squid:RedundantThrowsDeclarationCheck;"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ïıášşÿÿÿÿ
+bsquid:S2147Z"DCombine this catch with the one at line 87, which has the same body.(ï­£Ä8‰½æ’º-

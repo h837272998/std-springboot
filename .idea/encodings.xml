@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/std1-hello" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/std2-exception_and_yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/std3-jpa" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/std4-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/std5-json_restful_uploadfile" charset="UTF-8" />
+  </component>
+</project>
